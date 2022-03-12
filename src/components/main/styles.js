@@ -48,6 +48,31 @@ const StyledImage = styled.img`
   object-fit: cover;
 `;
 
+const StyledButtons = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: calc(100vh - 350px);
+  width: 100%;
+`;
+
+const StyledButton = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: ${(props) =>
+    props.second ? "rgba(244, 244, 244, 0.65)" : "rgba(23, 26, 32, 0.8)"};
+  backgdrop-filter: blur(8px);
+  padding: 10px 25px;
+  border-radius: 25px;
+  color: ${(props) =>
+    props.second ? props.theme.colors.black : props.theme.colors.white};
+  width: 250px;
+  cursor: pointer;
+  &:first-child {
+    margin-right: 20px;
+  }
+`;
+
 export {
   StyledMain,
   StyledHeadingBox,
@@ -55,4 +80,6 @@ export {
   StyledSubheading,
   StyledMainBox,
   StyledImage,
+  StyledButtons,
+  StyledButton,
 };

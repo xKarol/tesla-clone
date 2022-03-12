@@ -1,7 +1,12 @@
 import Header from "./components/header";
 import Main from "./components/main";
+import Buttons from "./components/main/buttons";
 import Heading from "./components/main/heading";
-import { StyledImage, StyledMainBox } from "./components/main/styles";
+import {
+  StyledButton,
+  StyledImage,
+  StyledMainBox,
+} from "./components/main/styles";
 
 function App() {
   return (
@@ -11,6 +16,10 @@ function App() {
         heading="Model Y"
         subheading="Order Online for Touchless Delivery"
       />
+      <Buttons>
+        <StyledButton>Custom Order</StyledButton>
+        <StyledButton second>Existing Inventory</StyledButton>
+      </Buttons>
       <Main>
         <StyledMainBox>
           <StyledImage src="/images/model-3.jfif" alt="tesla car model 3" />
