@@ -1,3 +1,7 @@
 import styled from "styled-components";
 
-export {};
+const StyledLogo = styled.a`
+  width: 120px;
+`;
+
+export { StyledLogo };

@@ -7,7 +7,7 @@ function Theme({ children }) {
       white: "#ffffff",
     },
     fonts: {
-      main: "'Gotham SSm', sans-serif",
+      main: "'Gotham SSm', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
     },
   };
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
