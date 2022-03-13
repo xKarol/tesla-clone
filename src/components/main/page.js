@@ -1,8 +1,21 @@
+import { useContext, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import MainContext from "../../context/main-context";
 import { StyledImage, StyledMainBox } from "./styles";
 
-function MainPage({ image }) {
+function MainPage({ image, index }) {
+  const { ref, inView } = useInView({ threshold: 1, trackVisibility: true, delay: 100 });
+  const { setActive } = useContext(MainContext);
+
+  useEffect(() => {
+    if (inView) {
+      setActive(index);
+      console.log(index);
+    }
+  }, [inView, index, setActive]);
+
   return (
-    <StyledMainBox>
+    <StyledMainBox ref={ref}>
       <StyledImage src={image.src} alt={image.alt} />
     </StyledMainBox>
   );
