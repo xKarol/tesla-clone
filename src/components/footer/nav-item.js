@@ -1,9 +1,9 @@
 import { StyledNavItem } from "./styles";
 
-function NavItem({ children, href }) {
+function NavItem(props) {
   return (
-    <StyledNavItem>
-      <a href={href}>{children}</a>
+    <StyledNavItem {...props}>
+      <a href={props.href}>{props.children}</a>
     </StyledNavItem>
   );
 }

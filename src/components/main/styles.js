@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { BluredButton } from "../../styles";
+import { device } from "../../styles/breakpoints";
 
 const StyledMain = styled.main`
   display: flex;
@@ -55,6 +56,11 @@ const StyledButtons = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @media ${device.sm} {
+    flex-direction: row;
+  }
 `;
 
 const StyledButton = styled.a`
@@ -64,20 +70,27 @@ const StyledButton = styled.a`
   padding: 10px 25px;
   color: ${(props) =>
     props.second ? props.theme.colors.black : props.theme.colors.white};
-  width: 250px;
   cursor: pointer;
   pointer-events: initial;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 14px;
   ${BluredButton};
+  width: 100%;
+  @media ${device.sm} {
+    width: 250px;
+  }
   &::before {
     background: ${(props) =>
       props.second ? "rgba(244, 244, 244, 0.45)" : "rgba(23, 26, 32, 0.8)"};
     border-radius: 25px;
   }
   &:first-child {
-    margin-right: 20px;
+    margin-bottom: 15px;
+    @media ${device.md} {
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
   }
 `;
 
@@ -87,7 +100,9 @@ const StyledMainContent = styled.div`
   width: 100%;
   height: calc(100vh - 60px);
   align-items: center;
-  padding-top: 70px;
+  padding: 70px 50px;
+  padding-right: 70px;
+  padding-bottom: 0;
   position: fixed;
   top: 50%;
   left: 50%;
