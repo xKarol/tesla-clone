@@ -18,53 +18,22 @@ function Header() {
           <NavbarItem>Model Y</NavbarItem>
           <NavbarItem>Solar Roof</NavbarItem>
           <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
-          <NavbarItem>Solar Panels</NavbarItem>
         </Navbar>
         <Navbar>
+          <NavbarItem onlyMenu>Existing Inventory</NavbarItem>
+          <NavbarItem onlyMenu>Used Inventory</NavbarItem>
+          <NavbarItem onlyMenu>Trade-In</NavbarItem>
+          <NavbarItem onlyMenu>Test Drive</NavbarItem>
+          <NavbarItem onlyMenu>Powerwall</NavbarItem>
+          <NavbarItem onlyMenu>Commercial Energy</NavbarItem>
+          <NavbarItem onlyMenu>Utilities</NavbarItem>
+          <NavbarItem onlyMenu>Charging</NavbarItem>
+          <NavbarItem onlyMenu>Find Us</NavbarItem>
+          <NavbarItem onlyMenu>Support</NavbarItem>
+          <NavbarItem onlyMenu>Investor Relations</NavbarItem>
           <NavbarItem>Shop</NavbarItem>
           <NavbarItem>Account</NavbarItem>
+          <NavbarItem onlyMenu>More</NavbarItem>
           <NavbarItem id="menu" onClick={() => setActive(!active)}>
             Menu
           </NavbarItem>

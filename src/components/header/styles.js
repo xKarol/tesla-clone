@@ -16,6 +16,7 @@ const StyledNavbarItem = styled.li`
   padding: 5px 15px;
   transition: background-color 300ms ease-in-out;
   border-radius: 12px;
+  display: ${(props) => props.onlyMenu && "none !important"};
   &:last-child {
     margin-right: 0;
   }
@@ -103,7 +104,7 @@ const StyledNavbarContainer = styled.div`
       flex-direction: column;
     }
     ${StyledNavbarItem} {
-      display: block;
+      display: block !important;
       z-index: 100;
       &#menu::before {
         display: none;
