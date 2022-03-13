@@ -28,8 +28,6 @@ const StyledHeadingBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
-  margin-top: 40px;
   color: ${(props) => props.theme.colors.black};
 `;
 
@@ -49,10 +47,10 @@ const StyledImage = styled.img`
 `;
 
 const StyledButtons = styled.div`
+  margin-top: 275px;
+  width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: calc(100vh - 350px);
-  width: 100%;
 `;
 
 const StyledButton = styled.a`
@@ -73,6 +71,14 @@ const StyledButton = styled.a`
   }
 `;
 
+const StyledMainContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+  align-items: center;
+  padding-top: 35px;
+`;
+
 export {
   StyledMain,
   StyledHeadingBox,
@@ -82,4 +88,5 @@ export {
   StyledImage,
   StyledButtons,
   StyledButton,
+  StyledMainContent,
 };

@@ -4,7 +4,11 @@ import MainContext from "../../context/main-context";
 import { StyledImage, StyledMainBox } from "./styles";
 
 function MainPage({ image, index }) {
-  const { ref, inView } = useInView({ threshold: 1, trackVisibility: true, delay: 100 });
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    trackVisibility: true,
+    delay: 100,
+  });
   const { setActive } = useContext(MainContext);
 
   useEffect(() => {
