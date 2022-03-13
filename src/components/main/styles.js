@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { BluredButton } from "../../styles";
 
 const StyledMain = styled.main`
   display: flex;
@@ -69,21 +70,11 @@ const StyledButton = styled.a`
   text-transform: uppercase;
   font-weight: 400;
   font-size: 14px;
-  position: relative;
-  background: transparent;
+  ${BluredButton};
   &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: red;
-    z-index: -1;
     background: ${(props) =>
       props.second ? "rgba(244, 244, 244, 0.45)" : "rgba(23, 26, 32, 0.8)"};
     border-radius: 25px;
-    backdrop-filter: blur(8px);
   }
   &:first-child {
     margin-right: 20px;
@@ -93,6 +84,7 @@ const StyledButton = styled.a`
 const StyledMainContent = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   height: calc(100vh - 60px);
   align-items: center;
   padding-top: 70px;
