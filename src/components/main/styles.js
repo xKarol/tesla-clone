@@ -34,10 +34,13 @@ const StyledHeadingBox = styled.div`
 const StyledHeading = styled.h1`
   font-size: 43px;
   font-weight: 600;
+  pointer-events: initial;
 `;
 
 const StyledSubheading = styled.p`
   letter-spacing: 1px;
+  pointer-events: initial;
+  font-weight: 400;
 `;
 
 const StyledImage = styled.img`
@@ -47,7 +50,7 @@ const StyledImage = styled.img`
 `;
 
 const StyledButtons = styled.div`
-  margin-top: 275px;
+  margin-top: 300px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -57,15 +60,31 @@ const StyledButton = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${(props) =>
-    props.second ? "rgba(244, 244, 244, 0.65)" : "rgba(23, 26, 32, 0.8)"};
-  backgdrop-filter: blur(8px);
   padding: 10px 25px;
-  border-radius: 25px;
   color: ${(props) =>
     props.second ? props.theme.colors.black : props.theme.colors.white};
   width: 250px;
   cursor: pointer;
+  pointer-events: initial;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+  position: relative;
+  background: transparent;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: red;
+    z-index: -1;
+    background: ${(props) =>
+      props.second ? "rgba(244, 244, 244, 0.45)" : "rgba(23, 26, 32, 0.8)"};
+    border-radius: 25px;
+    backdrop-filter: blur(8px);
+  }
   &:first-child {
     margin-right: 20px;
   }
@@ -76,7 +95,13 @@ const StyledMainContent = styled.div`
   flex-direction: column;
   height: calc(100vh - 60px);
   align-items: center;
-  padding-top: 35px;
+  padding-top: 70px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
 `;
 
 export {
