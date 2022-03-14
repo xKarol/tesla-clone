@@ -24,6 +24,7 @@ const StyledNavItem = styled.li`
   margin-right: 15px;
   > a {
     font-size: 13px;
+    pointer-events: initial;
   }
   &:last-child {
     margin-right: 0;
