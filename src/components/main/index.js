@@ -24,26 +24,38 @@ function Main() {
           subheading={pages[active].subheading}
         />
         <Buttons>
-          <motion.div
-            initial={{ opacity: 0, translateX: -25 }}
-            animate={{ opacity: 1, translateX: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            {pages[active]?.buttons[0] && (
-              <StyledButton>{pages[active].buttons[0]}</StyledButton>
-            )}
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, translateX: 25 }}
-            animate={{ opacity: 1, translateX: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            {pages[active]?.buttons[1] && (
+          {pages[active]?.buttons[0] && (
+            <motion.div
+              initial={{ opacity: 0, translateX: -25 }}
+              animate={{ opacity: 1, translateX: 0 }}
+              transition={{ duration: 0.6 }}
+              style={{
+                width: "100%",
+                display: "flex",
+                marginTop: "auto",
+              }}
+            >
+              <StyledButton
+                style={{ margin: active === pages.length - 1 && "auto" }}
+              >
+                {pages[active].buttons[0]}
+              </StyledButton>
+            </motion.div>
+          )}
+          {pages[active]?.buttons[1] && (
+            <motion.div
+              initial={{ opacity: 0, translateX: 25 }}
+              animate={{ opacity: 1, translateX: 0 }}
+              transition={{ duration: 0.6 }}
+              style={{ width: "100%", display: "flex", marginTop: "auto" }}
+            >
               <StyledButton second>{pages[active].buttons[1]}</StyledButton>
-            )}
-          </motion.div>
+            </motion.div>
+          )}
         </Buttons>
-        <ArrowDown style={{ display: active === 0 ? "block" : "none" }} />
+        <ArrowDown
+          style={{ visibility: active === 0 ? "visible" : "hidden" }}
+        />
         {active === pages.length - 1 && <Footer />}
       </StyledMainContent>
       <StyledMain ref={scrollRef}>

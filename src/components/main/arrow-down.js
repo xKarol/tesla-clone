@@ -22,7 +22,7 @@ function ArrowDown(props) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 2, duration: 1 }}
-      style={{ marginTop: "auto", ...props.style }}
+      {...props}
     >
       <motion.div
         animate={{ translateY: [5, 0, 5] }}

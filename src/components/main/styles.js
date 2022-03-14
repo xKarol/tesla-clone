@@ -31,10 +31,11 @@ const StyledHeadingBox = styled.div`
   flex-direction: column;
   align-items: center;
   color: ${(props) => props.theme.colors.black};
+  text-align: center;
 `;
 
 const StyledHeading = styled.h1`
-  font-size: 43px;
+  font-size: 40px;
   font-weight: 600;
   pointer-events: initial;
 `;
@@ -42,7 +43,9 @@ const StyledHeading = styled.h1`
 const StyledSubheading = styled.p`
   letter-spacing: 1px;
   pointer-events: initial;
+  font-size: 15px;
   font-weight: 400;
+  padding: 0 20px;
 `;
 
 const StyledImage = styled.img`
@@ -52,14 +55,17 @@ const StyledImage = styled.img`
 `;
 
 const StyledButtons = styled.div`
-  margin-top: 275px;
+  margin-top: auto;
+  margin-bottom: 30px;
   width: 100%;
+  padding: 0 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   @media ${device.sm} {
     flex-direction: row;
+    margin-bottom: 60px;
   }
 `;
 
@@ -68,6 +74,7 @@ const StyledButton = styled.a`
   justify-content: center;
   align-items: center;
   padding: 10px 25px;
+  margin-left: ${(props) => (!props.second ? "auto" : "0")};
   color: ${(props) =>
     props.second ? props.theme.colors.black : props.theme.colors.white};
   cursor: pointer;
@@ -87,7 +94,7 @@ const StyledButton = styled.a`
   }
   &:first-child {
     margin-bottom: 15px;
-    @media ${device.md} {
+    @media ${device.sm} {
       margin-bottom: 0;
       margin-right: 20px;
     }
@@ -99,9 +106,7 @@ const StyledMainContent = styled.div`
   flex-direction: column;
   width: 100%;
   align-items: center;
-  padding: 40px;
-  padding-right: 70px;
-  padding-bottom: 0;
+  padding-top: 4vw;
   position: fixed;
   top: 60px;
   bottom: 0;
@@ -109,6 +114,12 @@ const StyledMainContent = styled.div`
   left: 0;
   z-index: 10;
   pointer-events: none;
+  @media ${device.lg} {
+    padding-top: 50px;
+  }
+  @media ${device.xlg} {
+    padding-top: 80px;
+  }
 `;
 
 export {

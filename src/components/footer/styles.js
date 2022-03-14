@@ -3,7 +3,6 @@ import { device } from "../../styles/breakpoints";
 
 const StyledFooter = styled.footer`
   display: flex;
-  margin-top: auto;
   margin-bottom: 10px;
   @media ${device.md} {
     margin-bottom: 30px;

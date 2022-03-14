@@ -8,7 +8,15 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   max-height: 30px;
   height: 30px;
-  padding: 30px 50px;
+  padding: 30px 20px;
+  @media ${device.sm} {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @media ${device.lg} {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 `;
 
 const StyledNavbarItem = styled.li`
