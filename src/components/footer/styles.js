@@ -21,6 +21,9 @@ const StyledNavList = styled.ul`
 
 const StyledNavItem = styled.li`
   display: ${(props) => props.smHide && "none"};
+  @media ${device.md} {
+    display: block;
+  }
   margin-right: 15px;
   > a {
     font-size: 13px;
