@@ -6,6 +6,7 @@ import MainPage from "./page";
 import { StyledButton, StyledMain, StyledMainContent } from "./styles";
 import Footer from "../footer";
 import { pages } from "./data";
+import { motion } from "framer-motion";
 
 function Main() {
   const [active, setActive] = useState(0);
@@ -22,12 +23,24 @@ function Main() {
           subheading={pages[active].subheading}
         />
         <Buttons>
-          {pages[active]?.buttons[0] && (
-            <StyledButton>{pages[active].buttons[0]}</StyledButton>
-          )}
-          {pages[active]?.buttons[1] && (
-            <StyledButton second>{pages[active].buttons[1]}</StyledButton>
-          )}
+          <motion.div
+            initial={{ opacity: 0, translateX: -25 }}
+            animate={{ opacity: 1, translateX: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            {pages[active]?.buttons[0] && (
+              <StyledButton>{pages[active].buttons[0]}</StyledButton>
+            )}
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, translateX: 25 }}
+            animate={{ opacity: 1, translateX: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            {pages[active]?.buttons[1] && (
+              <StyledButton second>{pages[active].buttons[1]}</StyledButton>
+            )}
+          </motion.div>
         </Buttons>
         {active === pages.length - 1 && <Footer />}
       </StyledMainContent>
