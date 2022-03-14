@@ -57,7 +57,6 @@ const StyledImage = styled.img`
 const StyledButtons = styled.div`
   margin-top: auto;
   margin-bottom: 30px;
-  width: 100%;
   padding: 0 25px;
   display: flex;
   justify-content: center;
