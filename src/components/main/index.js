@@ -7,6 +7,7 @@ import { StyledButton, StyledMain, StyledMainContent } from "./styles";
 import Footer from "../footer";
 import { pages } from "./data";
 import { motion } from "framer-motion";
+import ArrowDown from "./arrow-down";
 
 function Main() {
   const [active, setActive] = useState(0);
@@ -42,6 +43,7 @@ function Main() {
             )}
           </motion.div>
         </Buttons>
+        <ArrowDown style={{ display: active === 0 ? "block" : "none" }} />
         {active === pages.length - 1 && <Footer />}
       </StyledMainContent>
       <StyledMain ref={scrollRef}>

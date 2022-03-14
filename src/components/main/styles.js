@@ -52,7 +52,7 @@ const StyledImage = styled.img`
 `;
 
 const StyledButtons = styled.div`
-  margin-top: 300px;
+  margin-top: 275px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -98,15 +98,15 @@ const StyledMainContent = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: calc(100vh - 60px);
   align-items: center;
-  padding: 70px 50px;
+  padding: 40px;
   padding-right: 70px;
   padding-bottom: 0;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 60px;
+  bottom: 0;
+  right: 0;
+  left: 0;
   z-index: 10;
   pointer-events: none;
 `;
