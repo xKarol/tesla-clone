@@ -25,7 +25,9 @@ function Main() {
         />
         <Buttons>
           {pages[active]?.buttons[0] && (
-            <Button>{pages[active].buttons[0]}</Button>
+            <Button oneButton={!pages[active]?.buttons[1]}>
+              {pages[active].buttons[0]}
+            </Button>
           )}
           {pages[active]?.buttons[1] && (
             <Button second>{pages[active].buttons[1]}</Button>

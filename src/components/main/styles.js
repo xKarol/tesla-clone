@@ -56,6 +56,7 @@ const StyledImage = styled.img`
 
 const StyledButtons = styled.div`
   margin-top: auto;
+  width: 100%;
   margin-bottom: 30px;
   padding: 0 25px;
   display: flex;
@@ -76,6 +77,7 @@ const StyledButton = styled.a`
   margin-left: ${(props) => (!props.second ? "auto" : "0")};
   color: ${(props) =>
     props.second ? props.theme.colors.black : props.theme.colors.white};
+  margin: ${(props) => (props.oneButton ? "0 auto !important" : "")};
   cursor: pointer;
   pointer-events: initial;
   text-transform: uppercase;
@@ -106,6 +108,7 @@ const StyledMainContent = styled.div`
   width: 100%;
   align-items: center;
   padding-top: 4vw;
+  padding-right: 20px;
   position: fixed;
   top: 60px;
   bottom: 0;
