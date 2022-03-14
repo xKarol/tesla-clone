@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MainContext from "../../context/main-context";
 import Buttons from "./buttons";
 import Heading from "./heading";
@@ -12,11 +12,14 @@ import ArrowDown from "./arrow-down";
 function Main() {
   const [active, setActive] = useState(0);
   const scrollRef = useRef(null);
+  const [ref, setRef] = useState(null);
   const [opacity, setOpacity] = useState(1);
+
+  useEffect(() => setRef(scrollRef.current), [scrollRef]);
 
   return (
     <MainContext.Provider
-      value={{ active, setActive, setOpacity, scrollRef: scrollRef.current }}
+      value={{ active, setActive, setOpacity, scrollRef: ref }}
     >
       <StyledMainContent style={{ opacity: opacity }}>
         <Heading
