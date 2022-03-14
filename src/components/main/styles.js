@@ -36,12 +36,12 @@ const StyledHeadingBox = styled.div`
 
 const StyledHeading = styled.h1`
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 500;
   pointer-events: initial;
+  margin-bottom: 10px;
 `;
 
 const StyledSubheading = styled.p`
-  letter-spacing: 1px;
   pointer-events: initial;
   font-size: 15px;
   font-weight: 400;
@@ -73,15 +73,15 @@ const StyledButton = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 25px;
+  padding: 13px 25px;
   margin-left: ${(props) => (!props.second ? "auto" : "0")};
   color: ${(props) =>
     props.second ? props.theme.colors.black : props.theme.colors.white};
   cursor: pointer;
   pointer-events: initial;
   text-transform: uppercase;
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 13px;
   ${BluredButton};
   width: 100%;
   @media ${device.sm} {

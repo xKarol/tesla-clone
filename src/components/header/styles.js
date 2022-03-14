@@ -21,7 +21,7 @@ const StyledHeader = styled.header`
 
 const StyledNavbarItem = styled.li`
   cursor: pointer;
-  padding: 5px 15px;
+  padding: 8px 15px;
   transition: background-color 300ms ease-in-out;
   border-radius: 12px;
   display: ${(props) => props.onlyMenu && "none !important"};
