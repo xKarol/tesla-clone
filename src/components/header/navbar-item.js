@@ -1,9 +1,9 @@
 import { StyledNavbarItem } from "./styles";
 
-function NavbarItem(props) {
+function NavbarItem({ id, href, children, type, onClick }) {
   return (
-    <StyledNavbarItem {...props}>
-      <a href={props.href}>{props.children}</a>
+    <StyledNavbarItem id={id} type={type} onClick={onClick}>
+      <a href={href}>{children}</a>
     </StyledNavbarItem>
   );
 }

@@ -24,7 +24,7 @@ const StyledNavbarItem = styled.li`
   padding: 8px 15px;
   transition: background-color 300ms ease-in-out;
   border-radius: 12px;
-  display: ${(props) => props.onlyMenu && "none !important"};
+  display: ${(props) => props.type === "MENU" && "none !important"};
   &:last-child {
     margin-right: 0;
   }
