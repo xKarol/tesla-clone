@@ -32,6 +32,7 @@ const StyledHeadingBox = styled.div`
   align-items: center;
   color: ${(props) => props.theme.colors.black};
   text-align: center;
+  margin-bottom: 50px;
 `;
 
 const StyledHeading = styled.h1`
@@ -52,6 +53,7 @@ const StyledImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  user-select: none;
 `;
 
 const StyledButtons = styled.div`

@@ -9,6 +9,8 @@ const StyledHeader = styled.header`
   max-height: 30px;
   height: 30px;
   padding: 30px 20px;
+  position: relative;
+  overflow: hidden; // for slider
   @media ${device.sm} {
     padding-left: 40px;
     padding-right: 40px;
@@ -21,16 +23,12 @@ const StyledHeader = styled.header`
 
 const StyledNavbarItem = styled.li`
   cursor: pointer;
-  padding: 8px 15px;
-  transition: background-color 300ms ease-in-out;
-  border-radius: 12px;
   display: ${(props) => props.type === "MENU" && "none !important"};
+  > a {
+    padding: 8px 15px;
+  }
   &:last-child {
     margin-right: 0;
-  }
-  &:hover {
-    background: rgba(0, 0, 0, 0.05) !important;
-    background-filter: blur(10px);
   }
 `;
 
@@ -42,11 +40,13 @@ const StyledNavbarList = styled.ul`
     &#menu {
       display: block;
       z-index: 1;
-      ${BluredButton};
+      > a {
+        ${BluredButton};
+      }
     }
     @media ${device.lg} {
       display: block;
-      &#menu::before {
+      &#menu > a::before {
         background: transparent;
         backdrop-filter: unset;
       }
@@ -132,9 +132,20 @@ const StyledNavbarContainer = styled.div`
   }
 `;
 
+const StyledSlider = styled.div`
+  position: absolute;
+  padding: 8px 15px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.05) !important;
+  backdrop-filter: blur(8px);
+  transition: all 300ms ease-in;
+  opacity: ${(props) => (props.show ? 1 : 0)};
+`;
+
 export {
   StyledHeader,
   StyledNavbarContainer,
   StyledNavbarList,
   StyledNavbarItem,
+  StyledSlider,
 };
