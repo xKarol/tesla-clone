@@ -69,7 +69,7 @@ const StyledSlider = styled.div`
   position: absolute;
   padding: 8px 15px;
   border-radius: 12px;
-  background: rgba(0, 0, 0, 0.05) !important;
+  background: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(8px);
   transition: all 300ms ease-in;
   opacity: ${(props) => (props.show ? 1 : 0)};
@@ -81,11 +81,30 @@ const StyledSideMenuList = styled.ul`
   width: 100%;
   margin-top: 100px;
   max-height: 100vh;
-  padding-left: 30px;
+  padding: 10px 30px;
   overflow-y: auto;
   > * {
     margin-bottom: 20px;
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 400;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      right: -5px;
+      top: -8px;
+      bottom: -8px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(8px);
+      transition: all 200ms ease-in-out;
+      opacity: 0;
+      z-index: -1;
+    }
+    &:hover::before {
+      opacity: 1;
+    }
   }
   > :last-child {
     margin-bottom: 50px;
