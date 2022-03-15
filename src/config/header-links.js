@@ -9,7 +9,7 @@ export const headerLinks = [
   { name: "Model X", href: "/", type: CENTER },
   { name: "Model Y", href: "/", type: CENTER },
   { name: "Solar Roof", href: "/", type: CENTER },
-  { name: "Soolar Panels", href: "/", type: CENTER },
+  { name: "Solar Panels", href: "/", type: CENTER },
   { name: "Existing Inventory", href: "/", type: MENU },
   { name: "Used Inventory", href: "/", type: MENU },
   { name: "Trade-In", href: "/", type: MENU },

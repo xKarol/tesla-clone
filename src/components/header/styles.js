@@ -63,73 +63,6 @@ const StyledNavbarContainer = styled.div`
     margin-left: auto;
     margin-right: auto;
   }
-  > #close {
-    display: none;
-  }
-  &.active {
-    overflow-y: auto;
-    max-height: 100vh;
-    justify-content: unset;
-    position: fixed;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    flex-direction: column;
-    width: 300px;
-    padding: 80px 30px;
-    &::after {
-      content: "";
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      width: 300px;
-      background-color: ${(props) => props.theme.colors.white};
-    }
-    &::before {
-      content: "";
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      background: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(5px);
-      z-index: -1;
-    }
-    > #close {
-      width: 35px;
-      height: 35px;
-      display: block;
-      position: fixed;
-      top: 30px;
-      right: 50px;
-      z-index: 110;
-      cursor: pointer;
-      border-radius: 50%;
-      padding: 8px;
-      transition: background-color 300ms ease-in-out;
-      &:hover {
-        background-color: rgba(244, 244, 244, 0.45);
-      }
-    }
-    > :first-child {
-      margin-left: 0;
-      margin-right: 0;
-    }
-    ${StyledNavbarList} {
-      flex-direction: column;
-    }
-    ${StyledNavbarItem} {
-      display: block !important;
-      z-index: 100;
-      &#menu::before {
-        display: none;
-      }
-      margin: 0;
-      margin-bottom: 15px;
-    }
-  }
 `;
 
 const StyledSlider = styled.div`
@@ -142,10 +75,79 @@ const StyledSlider = styled.div`
   opacity: ${(props) => (props.show ? 1 : 0)};
 `;
 
+const StyledSideMenu = styled.div`
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  max-height: 100vh;
+  > * {
+    z-index: 100;
+  }
+  &::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+  }
+  &::after {
+    content: "";
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 300px;
+    background-color: ${(props) => props.theme.colors.white};
+  }
+  > #close {
+    width: 35px;
+    height: 35px;
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    z-index: 110;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 8px;
+    transition: background-color 300ms ease-in-out;
+    &:hover {
+      background-color: rgba(244, 244, 244, 0.45);
+    }
+  }
+`;
+
+const StyledSideMenuList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 100px;
+  max-height: 100vh;
+  overflow-y: auto;
+  > * {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  > :last-child {
+    margin-bottom: 50px;
+  }
+`;
+
 export {
   StyledHeader,
   StyledNavbarContainer,
   StyledNavbarList,
   StyledNavbarItem,
   StyledSlider,
+  StyledSideMenu,
+  StyledSideMenuList,
 };
