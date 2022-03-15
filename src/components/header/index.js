@@ -10,7 +10,6 @@ import SideMenu from "./side-menu";
 function Header() {
   const [active, setActive] = useState(false);
   const [showSlider, setShowSlider] = useState(false);
-
   const sliderRef = useRef(null);
 
   const handleMouseHover = (e) => {
@@ -55,7 +54,7 @@ function Header() {
           </Navbar>
         </StyledNavbarContainer>
       </StyledHeader>
-      {active && <SideMenu setActive={setActive} />}
+      <SideMenu active={active} setActive={setActive} />
     </>
   );
 }
