@@ -26,9 +26,7 @@ function Main() {
           subheading={pages[active].subheading}
         />
         <Buttons buttonText={pages[active]?.buttons} />
-        <ArrowDown
-          style={{ visibility: active === 0 ? "visible" : "hidden" }}
-        />
+        <ArrowDown show={active === 0} />
         {active === pages.length - 1 && <Footer />}
       </StyledMainContent>
       <StyledMain ref={scrollRef}>

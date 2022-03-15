@@ -44,7 +44,7 @@ const StyledNavbarList = styled.ul`
         ${BluredButton};
       }
     }
-    @media ${device.lg} {
+    @media (min-width: 1100px) {
       display: block;
       &#menu > a::before {
         background: transparent;

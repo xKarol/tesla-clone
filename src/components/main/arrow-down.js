@@ -12,23 +12,26 @@ const StyledArrow = styled(FiChevronDown)`
   pointer-events: initial;
 `;
 
-function ArrowDown(props) {
+function ArrowDown({ show }) {
   const { scrollRef } = useContext(MainContext);
 
   const handleClick = () => (scrollRef.scrollTop = window.innerHeight);
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 2, duration: 1 }}
-      {...props}
+      initial={{ opacity: 0, translateY: -25 }}
+      animate={{ opacity: 1, translateY: 0 }}
+      transition={{ delay: 2, duration: 0.8 }}
+      style={{ visibility: show ? "visible" : "hidden" }}
     >
       <motion.div
-        animate={{ translateY: [5, 0, 5] }}
+        animate={{ translateY: [0, 5, 0, 3, 0] }}
         transition={{
+          type: "spring",
           repeat: Infinity,
-          duration: 0.6,
+          duration: 1.2,
+          repeatDelay: 1.5,
+          delay: 2.5,
         }}
       >
         <StyledArrow onClick={handleClick} />
