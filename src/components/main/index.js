@@ -43,7 +43,7 @@ function Main() {
       </StyledMainContent>
       <StyledMain ref={scrollRef}>
         {pages.map((props, index) => (
-          <MainPage key={props.id} index={index} image={props.image} />
+          <MainPage key={props.id} index={index} images={props.images} />
         ))}
       </StyledMain>
     </MainContext.Provider>

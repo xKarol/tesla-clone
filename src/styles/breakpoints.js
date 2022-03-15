@@ -1,6 +1,13 @@
+export const breakpoints = {
+  sm: 640,
+  md: 768,
+  lg: 1024,
+  xlg: 1400,
+};
+
 export const device = {
-  sm: `(min-width: 640px)`,
-  md: `(min-width: 768px)`,
-  lg: `(min-width: 1024px)`,
-  xlg: `(min-width: 1400px)`,
+  sm: `(min-width: ${breakpoints.sm}px)`,
+  md: `(min-width: ${breakpoints.md}px)`,
+  lg: `(min-width: ${breakpoints.lg}px)`,
+  xlg: `(min-width: ${breakpoints.xlg}px)`,
 };

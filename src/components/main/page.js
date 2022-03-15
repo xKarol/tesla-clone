@@ -1,15 +1,18 @@
 import { useContext, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { AppContext } from "../../context/app-context";
 import MainContext from "../../context/main-context";
 import { StyledImage, StyledMainBox } from "./styles";
+import { breakpoints } from "../../styles/breakpoints";
 
-function MainPage({ image, index }) {
+function MainPage({ images, index }) {
   const { ref, inView, entry } = useInView({
     threshold: 0.5,
     trackVisibility: true,
     delay: 100,
   });
   const { setActive, active, scrollRef, setOpacity } = useContext(MainContext);
+  const { width } = useContext(AppContext);
 
   useEffect(() => {
     if (inView) {
@@ -31,13 +34,17 @@ function MainPage({ image, index }) {
       if (percentage > 1) percentage = 1 - (percentage - 1);
       setOpacity(percentage);
     };
+
     scrollRef.addEventListener("scroll", handleScroll);
     return () => scrollRef.removeEventListener("scroll", handleScroll);
   }, [scrollRef, entry, active, setOpacity]);
 
   return (
     <StyledMainBox ref={ref}>
-      <StyledImage src={image.src} alt={image.alt} />
+      <StyledImage
+        src={width <= breakpoints.sm ? images.mobile : images.desktop}
+        alt={images.alt}
+      />
     </StyledMainBox>
   );
 }
