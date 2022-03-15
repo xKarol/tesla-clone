@@ -58,7 +58,7 @@ const StyledImage = styled.img`
 
 const StyledButtons = styled.div`
   margin-top: auto;
-  width: 100%;
+  width: max-content;
   margin-bottom: 30px;
   padding: 0 25px;
   display: flex;
@@ -79,7 +79,6 @@ const StyledButton = styled.a`
   margin-left: ${(props) => (!props.second ? "auto" : "0")};
   color: ${(props) =>
     props.second ? props.theme.colors.black : props.theme.colors.white};
-  margin: ${(props) => (props.oneButton ? "0 auto !important" : "")};
   cursor: pointer;
   pointer-events: initial;
   text-transform: uppercase;
@@ -87,6 +86,7 @@ const StyledButton = styled.a`
   font-size: 13px;
   ${BluredButton};
   width: 100%;
+  min-width: 250px;
   @media ${device.sm} {
     width: 250px;
   }
@@ -110,7 +110,6 @@ const StyledMainContent = styled.div`
   width: 100%;
   align-items: center;
   padding-top: 4vw;
-  padding-right: 20px;
   position: fixed;
   top: 60px;
   bottom: 0;
@@ -118,6 +117,7 @@ const StyledMainContent = styled.div`
   left: 0;
   z-index: 10;
   pointer-events: none;
+  transition: opacity: 200ms ease-in-out;
   @media ${device.lg} {
     padding-top: 50px;
   }

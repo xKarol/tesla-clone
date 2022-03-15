@@ -3,7 +3,6 @@ import MainContext from "../../context/main-context";
 import Buttons from "./buttons";
 import Heading from "./heading";
 import MainPage from "./page";
-import Button from "./button";
 import { StyledMain, StyledMainContent } from "./styles";
 import Footer from "../footer";
 import { pages } from "./data";
@@ -26,16 +25,7 @@ function Main() {
           heading={pages[active].heading}
           subheading={pages[active].subheading}
         />
-        <Buttons>
-          {pages[active]?.buttons[0] && (
-            <Button oneButton={!pages[active]?.buttons[1]}>
-              {pages[active].buttons[0]}
-            </Button>
-          )}
-          {pages[active]?.buttons[1] && (
-            <Button second>{pages[active].buttons[1]}</Button>
-          )}
-        </Buttons>
+        <Buttons buttonText={pages[active]?.buttons} />
         <ArrowDown
           style={{ visibility: active === 0 ? "visible" : "hidden" }}
         />
