@@ -15,6 +15,11 @@ function Header() {
   const handleMouseHover = (e) => {
     const currentElement = e.target;
     if (currentElement.id !== "nav-item") return;
+    if (!showSlider) {
+      sliderRef.current.style.width = "initial";
+      sliderRef.current.style.height = "initial";
+      sliderRef.current.style.left = "unset";
+    }
     setShowSlider(true);
     const left = currentElement.getBoundingClientRect().left;
     sliderRef.current.style.width = `${currentElement.offsetWidth}px`;
