@@ -13,6 +13,7 @@ const GlobalStyles = createGlobalStyle`
         font-size: 14px;
         font-weight: 500;
         font-family: ${(props) => props.theme.fonts.main};
+        overscroll-behavior-y: contain;
     }
     ol, ul {
         list-style: none;
