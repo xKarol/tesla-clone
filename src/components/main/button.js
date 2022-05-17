@@ -27,7 +27,7 @@ function Button({ hide, second, children }) {
       animate={controls}
       variants={variants}
       onAnimationComplete={() => setDisableAnim(true)}
-      transition={{ delay: 1.9, duration: 0.6 }}
+      transition={{ delay: 1.1, duration: 0.6 }}
       style={{
         width: "100%",
         display: hide ? "none" : "flex",

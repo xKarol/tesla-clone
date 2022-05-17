@@ -14,7 +14,7 @@ function Heading({ heading, subheading }) {
       <motion.div
         initial={{ opacity: 0, translateY: 25 }}
         animate={{ opacity: 1, translateY: 0 }}
-        transition={{ delay: 1.9, duration: 0.6 }}
+        transition={{ delay: 1.1, duration: 0.6 }}
       >
         {subheading && <StyledSubheading>{subheading}</StyledSubheading>}
       </motion.div>
