@@ -37,9 +37,9 @@ function SideMenu({ active, setActive }) {
         <StyledSidebarContainer onClick={() => setActive(false)}>
           <StyledSideMenu
             onClick={(e) => e.stopPropagation()}
-            initial={{ x: "100vw", opacity: 0 }}
+            initial={{ x: "calc(100vw - 150px)", opacity: 0 }}
             animate={{ x: "calc(100vw - 300px)", opacity: 1 }}
-            exit={{ x: "100vw", opacity: 0 }}
+            exit={{ x: "calc(100vw - 150px)", opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
             <StyledCloseIcon onClick={() => setActive(false)} />
