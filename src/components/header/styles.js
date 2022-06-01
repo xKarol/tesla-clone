@@ -26,8 +26,9 @@ export const StyledHeader = styled.header`
 export const StyledNavbarItem = styled.li`
   cursor: pointer;
   display: ${(props) => props.type === "MENU" && "none !important"};
-  > a {
+  > #nav-item {
     padding: 8px 15px;
+    font-size: 1em;
   }
   &:last-child {
     margin-right: 0;
@@ -35,20 +36,26 @@ export const StyledNavbarItem = styled.li`
 `;
 
 export const StyledNavbarList = styled.ul`
-  font-size: 15px;
   display: flex;
+  align-items: center;
+  font-size: 15px;
   > ${StyledNavbarItem} {
     display: none;
     &#menu {
       display: block;
       z-index: 1;
-      > a {
+      > #nav-item {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: 500;
         ${BluredButton};
       }
     }
     @media (min-width: 1100px) {
       display: block;
-      &#menu > a::before {
+      &#menu > #nav-item::before {
         background: transparent;
         backdrop-filter: unset;
       }
@@ -58,6 +65,7 @@ export const StyledNavbarList = styled.ul`
 
 export const StyledNavbarContainer = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   flex: 1;
   z-index: 200;
@@ -85,7 +93,7 @@ export const StyledSideMenuList = styled.ul`
   max-height: 100vh;
   padding: 10px 30px;
   overflow-y: auto;
-  > * {
+  > li {
     margin-bottom: 20px;
     font-size: 15px;
     font-weight: 400;
@@ -133,7 +141,9 @@ export const StyledSideMenu = styled(motion.nav)`
   display: flex;
 `;
 
-export const StyledCloseIcon = styled(GrClose)`
+export const StyledCloseIcon = styled(GrClose).attrs(() => ({
+  tabindex: 0,
+}))`
   position: absolute;
   top: 20px;
   right: 30px;

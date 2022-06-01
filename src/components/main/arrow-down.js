@@ -1,16 +1,7 @@
-import { FiChevronDown } from "react-icons/fi";
-import styled from "styled-components";
 import { motion } from "framer-motion";
 import MainContext from "../../context/main-context";
 import { useContext } from "react";
-
-const StyledArrow = styled(FiChevronDown)`
-  margin-top: auto;
-  margin-bottom: 20px;
-  font-size: 25px;
-  cursor: pointer;
-  pointer-events: initial;
-`;
+import { StyledArrow, StyledArrowButton } from "./styles";
 
 function ArrowDown({ show }) {
   const { scrollRef } = useContext(MainContext);
@@ -24,7 +15,7 @@ function ArrowDown({ show }) {
       transition={{ delay: 2, duration: 0.8 }}
       style={{ visibility: show ? "visible" : "hidden" }}
     >
-      <motion.div
+      <StyledArrowButton
         animate={{ translateY: [0, 5, 0, 3, 0] }}
         transition={{
           type: "spring",
@@ -33,9 +24,10 @@ function ArrowDown({ show }) {
           repeatDelay: 1.5,
           delay: 2.5,
         }}
+        onClick={handleClick}
       >
-        <StyledArrow onClick={handleClick} />
-      </motion.div>
+        <StyledArrow />
+      </StyledArrowButton>
     </motion.div>
   );
 }

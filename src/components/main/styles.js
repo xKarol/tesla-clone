@@ -1,6 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { BluredButton } from "../../styles";
 import { device } from "../../styles/breakpoints";
+import { FiChevronDown } from "react-icons/fi";
 
 const StyledMain = styled.main`
   display: flex;
@@ -71,10 +73,12 @@ const StyledButtons = styled.div`
   }
 `;
 
-const StyledButton = styled.a`
-  display: flex;
+const StyledButton = styled(motion.button)`
+  display: ${(props) => (props.hide ? "none" : "flex")};
   justify-content: center;
   align-items: center;
+  background: none;
+  border: none;
   padding: 13px 25px;
   margin-left: ${(props) => (!props.second ? "auto" : "0")};
   color: ${(props) =>
@@ -102,6 +106,20 @@ const StyledButton = styled.a`
       margin-right: 20px;
     }
   }
+`;
+
+export const StyledArrowButton = styled(motion.button)`
+  display: flex;
+  background: none;
+  border: none;
+  margin-bottom: 20px;
+  margin-top: auto;
+`;
+
+export const StyledArrow = styled(FiChevronDown)`
+  font-size: 25px;
+  cursor: pointer;
+  pointer-events: initial;
 `;
 
 const StyledMainContent = styled.div`

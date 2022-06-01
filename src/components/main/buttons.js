@@ -4,8 +4,8 @@ import { StyledButtons } from "./styles";
 function Buttons({ buttonText }) {
   return (
     <StyledButtons>
-      <Button hide={!buttonText[0]}>{buttonText[0]}</Button>
-      <Button hide={!buttonText[1]} second>
+      <Button hide={!buttonText[0]?.length}>{buttonText[0]}</Button>
+      <Button hide={!buttonText[1]?.length} second>
         {buttonText[1]}
       </Button>
     </StyledButtons>

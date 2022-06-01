@@ -1,10 +1,10 @@
-import { motion, useAnimation } from "framer-motion";
+import { useAnimation } from "framer-motion";
 import { StyledButton } from "./styles";
 import { breakpoints } from "../../styles/breakpoints";
 import { AppContext } from "../../context/app-context";
 import { useContext, useEffect, useState } from "react";
 
-function Button({ hide, second, children }) {
+function Button({ hide = false, second = false, children }) {
   const { width } = useContext(AppContext);
   const [disableAnim, setDisableAnim] = useState(false);
   const controls = useAnimation();
@@ -22,20 +22,17 @@ function Button({ hide, second, children }) {
   }, [disableAnim, controls, width]);
 
   return (
-    <motion.div
+    <StyledButton
       initial={width > breakpoints.md ? "initialDesktop" : "initial"}
       animate={controls}
       variants={variants}
       onAnimationComplete={() => setDisableAnim(true)}
       transition={{ delay: 1.1, duration: 0.6 }}
-      style={{
-        width: "100%",
-        display: hide ? "none" : "flex",
-        marginTop: "auto",
-      }}
+      hide={hide ? 1 : 0}
+      second={second ? 1 : 0}
     >
-      <StyledButton second={!!second}>{children}</StyledButton>
-    </motion.div>
+      {children}
+    </StyledButton>
   );
 }
 

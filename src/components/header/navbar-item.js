@@ -3,9 +3,13 @@ import { StyledNavbarItem } from "./styles";
 function NavbarItem({ id, href, children, type, onClick }) {
   return (
     <StyledNavbarItem id={id} type={type} onClick={onClick}>
-      <a href={href} id="nav-item">
-        {children}
-      </a>
+      {!href?.length ? (
+        <button id="nav-item">{children}</button>
+      ) : (
+        <a href={href.length ? href : "#"} id="nav-item">
+          {children}
+        </a>
+      )}
     </StyledNavbarItem>
   );
 }
