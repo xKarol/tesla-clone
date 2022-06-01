@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { device } from "../../styles/breakpoints";
 import { BluredButton } from "../../styles";
 import { motion } from "framer-motion";
-import { GrClose } from "react-icons/gr";
 
 export const StyledHeader = styled.header`
   display: flex;
@@ -141,9 +140,7 @@ export const StyledSideMenu = styled(motion.nav)`
   display: flex;
 `;
 
-export const StyledCloseIcon = styled(GrClose).attrs(() => ({
-  tabindex: 0,
-}))`
+export const StyledCloseIconButton = styled.button`
   position: absolute;
   top: 20px;
   right: 30px;
@@ -152,10 +149,13 @@ export const StyledCloseIcon = styled(GrClose).attrs(() => ({
   display: block;
   z-index: 110;
   cursor: pointer;
+  border: none;
+  background: none;
   border-radius: 50%;
   padding: 8px;
   transition: background-color 300ms ease-in-out;
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: rgba(244, 244, 244, 0.45);
   }
 `;

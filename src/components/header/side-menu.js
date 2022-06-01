@@ -1,5 +1,5 @@
 import {
-  StyledCloseIcon,
+  StyledCloseIconButton,
   StyledSidebarContainer,
   StyledSideMenu,
   StyledSideMenuList,
@@ -7,6 +7,7 @@ import {
 import { headerLinks } from "../../config/header-links";
 import NavbarItem from "./navbar-item";
 import { AnimatePresence } from "framer-motion";
+import { GrClose } from "react-icons/gr";
 
 function SideMenu({ active, setActive }) {
   return (
@@ -26,7 +27,9 @@ function SideMenu({ active, setActive }) {
             exit={{ x: "calc(100vw - 150px)", opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <StyledCloseIcon onClick={() => setActive(false)} />
+            <StyledCloseIconButton onClick={() => setActive(false)}>
+              <GrClose />
+            </StyledCloseIconButton>
             <StyledSideMenuList>
               {headerLinks.map(({ name, href }) => (
                 <NavbarItem key={name} href={href}>
