@@ -32,6 +32,7 @@ function MainPage({ images, index }) {
       const distance = scrollTop + viewportHeight - elementOffsetTop;
       let percentage = (distance / (viewportHeight + elementHeight)) * 2;
       if (percentage > 1) percentage = 1 - (percentage - 1);
+      if (percentage < 0) percentage = 0;
       setOpacity(percentage);
     };
 
