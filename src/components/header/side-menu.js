@@ -1,34 +1,12 @@
-import { StyledSidebarContainer, StyledSideMenuList } from "./styles";
-import { GrClose } from "react-icons/gr";
+import {
+  StyledCloseIcon,
+  StyledSidebarContainer,
+  StyledSideMenu,
+  StyledSideMenuList,
+} from "./styles";
 import { headerLinks } from "../../config/header-links";
 import NavbarItem from "./navbar-item";
-import { motion, AnimatePresence } from "framer-motion";
-import styled from "styled-components";
-
-const StyledSideMenu = styled(motion.div)`
-  width: 300px;
-  height: 100%;
-  background: #fff;
-  position: relative;
-  display: flex;
-`;
-
-const StyledCloseIcon = styled(GrClose)`
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  width: 35px;
-  height: 35px;
-  display: block;
-  z-index: 110;
-  cursor: pointer;
-  border-radius: 50%;
-  padding: 8px;
-  transition: background-color 300ms ease-in-out;
-  &:hover {
-    background-color: rgba(244, 244, 244, 0.45);
-  }
-`;
+import { AnimatePresence } from "framer-motion";
 
 function SideMenu({ active, setActive }) {
   return (

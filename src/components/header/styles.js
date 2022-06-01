@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { device } from "../../styles/breakpoints";
 import { BluredButton } from "../../styles";
+import { motion } from "framer-motion";
+import { GrClose } from "react-icons/gr";
 
-const StyledHeader = styled.header`
+export const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,7 +23,7 @@ const StyledHeader = styled.header`
   }
 `;
 
-const StyledNavbarItem = styled.li`
+export const StyledNavbarItem = styled.li`
   cursor: pointer;
   display: ${(props) => props.type === "MENU" && "none !important"};
   > a {
@@ -32,7 +34,7 @@ const StyledNavbarItem = styled.li`
   }
 `;
 
-const StyledNavbarList = styled.ul`
+export const StyledNavbarList = styled.ul`
   font-size: 15px;
   display: flex;
   > ${StyledNavbarItem} {
@@ -54,7 +56,7 @@ const StyledNavbarList = styled.ul`
   }
 `;
 
-const StyledNavbarContainer = styled.div`
+export const StyledNavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex: 1;
@@ -65,7 +67,7 @@ const StyledNavbarContainer = styled.div`
   }
 `;
 
-const StyledSlider = styled.div`
+export const StyledSlider = styled.div`
   position: absolute;
   padding: 8px 15px;
   border-radius: 12px;
@@ -75,7 +77,7 @@ const StyledSlider = styled.div`
   opacity: ${(props) => (props.show ? 1 : 0)};
 `;
 
-const StyledSideMenuList = styled.ul`
+export const StyledSideMenuList = styled.ul`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -111,7 +113,7 @@ const StyledSideMenuList = styled.ul`
   }
 `;
 
-const StyledSidebarContainer = styled.div`
+export const StyledSidebarContainer = styled.div`
   position: fixed;
   left: 0;
   right: 0;
@@ -123,12 +125,27 @@ const StyledSidebarContainer = styled.div`
   z-index: 500;
 `;
 
-export {
-  StyledHeader,
-  StyledNavbarContainer,
-  StyledNavbarList,
-  StyledNavbarItem,
-  StyledSlider,
-  StyledSideMenuList,
-  StyledSidebarContainer,
-};
+export const StyledSideMenu = styled(motion.div)`
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  position: relative;
+  display: flex;
+`;
+
+export const StyledCloseIcon = styled(GrClose)`
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 35px;
+  height: 35px;
+  display: block;
+  z-index: 110;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 8px;
+  transition: background-color 300ms ease-in-out;
+  &:hover {
+    background-color: rgba(244, 244, 244, 0.45);
+  }
+`;
