@@ -93,30 +93,37 @@ export const StyledSideMenuList = styled.ul`
   padding: 10px 30px;
   overflow-y: auto;
   > li {
-    margin-bottom: 20px;
     font-size: 15px;
     font-weight: 400;
     position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      left: -5px;
-      right: -5px;
-      top: -8px;
-      bottom: -8px;
-      border-radius: 12px;
-      background: rgba(0, 0, 0, 0.05);
-      backdrop-filter: blur(8px);
-      transition: all 200ms ease-in-out;
-      opacity: 0;
-      z-index: -1;
+    display: flex;
+    margin-bottom: 10px;
+    :last-child {
+      margin-bottom: 50px;
     }
-    &:hover::before {
-      opacity: 1;
+    > #nav-item {
+      width: 100%;
+      height: 100%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(8px);
+        transition: all 200ms ease-in-out;
+        opacity: 0;
+        z-index: -1;
+      }
+      &:hover::before,
+      &:focus::before {
+        opacity: 1;
+      }
     }
-  }
-  > :last-child {
-    margin-bottom: 50px;
   }
 `;
 
