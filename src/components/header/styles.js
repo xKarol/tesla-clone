@@ -113,7 +113,7 @@ export const StyledSideMenuList = styled.ul`
   }
 `;
 
-export const StyledSidebarContainer = styled.div`
+export const StyledSidebarContainer = styled(motion.div)`
   position: fixed;
   left: 0;
   right: 0;
@@ -125,7 +125,7 @@ export const StyledSidebarContainer = styled.div`
   z-index: 500;
 `;
 
-export const StyledSideMenu = styled(motion.div)`
+export const StyledSideMenu = styled(motion.nav)`
   width: 300px;
   height: 100%;
   background: #fff;

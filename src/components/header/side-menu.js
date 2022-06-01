@@ -12,7 +12,13 @@ function SideMenu({ active, setActive }) {
   return (
     <AnimatePresence>
       {active && (
-        <StyledSidebarContainer onClick={() => setActive(false)}>
+        <StyledSidebarContainer
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.1 }}
+          onClick={() => setActive(false)}
+        >
           <StyledSideMenu
             onClick={(e) => e.stopPropagation()}
             initial={{ x: "calc(100vw - 150px)", opacity: 0 }}
