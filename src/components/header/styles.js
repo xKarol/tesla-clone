@@ -148,12 +148,14 @@ export const StyledSideMenu = styled(motion.nav)`
 `;
 
 export const StyledCloseIconButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: 20px;
   right: 30px;
   width: 35px;
   height: 35px;
-  display: block;
   z-index: 110;
   cursor: pointer;
   border: none;
