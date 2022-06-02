@@ -4,7 +4,7 @@ import { device } from "../../styles/breakpoints";
 import { FiChevronDown } from "react-icons/fi";
 import { motion } from "framer-motion";
 
-const StyledMain = styled.main`
+export const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -21,14 +21,14 @@ const StyledMain = styled.main`
   scroll-snap-type: y mandatory;
 `;
 
-const StyledMainBox = styled.section`
+export const StyledMainBox = styled.section`
   position: relative;
   scroll-snap-align: start;
   width: 100%;
   min-height: 100%;
 `;
 
-const StyledHeadingBox = styled.div`
+export const StyledHeadingBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,14 +37,14 @@ const StyledHeadingBox = styled.div`
   margin-bottom: 50px;
 `;
 
-const StyledHeading = styled(motion.h1)`
+export const StyledHeading = styled(motion.h1)`
   font-size: 40px;
   font-weight: 500;
   pointer-events: initial;
   margin-bottom: 10px;
 `;
 
-const StyledSubheading = styled(motion.p)`
+export const StyledSubheading = styled(motion.p)`
   pointer-events: initial;
   font-size: 15px;
   font-weight: 400;
@@ -64,14 +64,14 @@ const StyledSubheading = styled(motion.p)`
   }
 `;
 
-const StyledImage = styled.img`
+export const StyledImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
   user-select: none;
 `;
 
-const StyledButtons = styled.div`
+export const StyledButtons = styled.div`
   margin-top: auto;
   width: max-content;
   margin-bottom: 30px;
@@ -86,7 +86,7 @@ const StyledButtons = styled.div`
   }
 `;
 
-const StyledButton = styled(motion.button)`
+export const StyledButton = styled(motion.button)`
   display: ${(props) => (props.hide ? "none" : "flex")};
   justify-content: center;
   align-items: center;
@@ -135,7 +135,7 @@ export const StyledArrow = styled(FiChevronDown)`
   pointer-events: initial;
 `;
 
-const StyledMainContent = styled.div`
+export const StyledMainContent = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -148,7 +148,7 @@ const StyledMainContent = styled.div`
   left: 0;
   z-index: 10;
   pointer-events: none;
-  transition: opacity: 200ms ease-in-out;
+  transition: opacity 50ms ease-in-out;
   @media ${device.lg} {
     padding-top: 50px;
   }
@@ -156,15 +156,3 @@ const StyledMainContent = styled.div`
     padding-top: 80px;
   }
 `;
-
-export {
-  StyledMain,
-  StyledHeadingBox,
-  StyledHeading,
-  StyledSubheading,
-  StyledMainBox,
-  StyledImage,
-  StyledButtons,
-  StyledButton,
-  StyledMainContent,
-};
