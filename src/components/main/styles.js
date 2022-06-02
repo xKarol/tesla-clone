@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
 import styled from "styled-components";
 import { BluredButton } from "../../styles";
 import { device } from "../../styles/breakpoints";
 import { FiChevronDown } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 const StyledMain = styled.main`
   display: flex;
@@ -37,14 +37,14 @@ const StyledHeadingBox = styled.div`
   margin-bottom: 50px;
 `;
 
-const StyledHeading = styled.h1`
+const StyledHeading = styled(motion.h1)`
   font-size: 40px;
   font-weight: 500;
   pointer-events: initial;
   margin-bottom: 10px;
 `;
 
-const StyledSubheading = styled.p`
+const StyledSubheading = styled(motion.p)`
   pointer-events: initial;
   font-size: 15px;
   font-weight: 400;
