@@ -13,6 +13,7 @@ function Main() {
   const scrollRef = useRef(null);
   const [ref, setRef] = useState(null);
   const [opacity, setOpacity] = useState(1);
+  const lastPage = active === pages.length - 1;
 
   useEffect(() => setRef(scrollRef.current), [scrollRef]);
 
@@ -27,7 +28,7 @@ function Main() {
         />
         <Buttons buttonText={pages[active]?.buttons} />
         <ArrowDown show={active === 0} />
-        {active === pages.length - 1 && <Footer />}
+        {lastPage && <Footer />}
       </StyledMainContent>
       <StyledMain ref={scrollRef}>
         {pages.map((props, index) => (

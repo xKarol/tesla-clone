@@ -49,6 +49,19 @@ const StyledSubheading = styled.p`
   font-size: 15px;
   font-weight: 400;
   padding: 0 20px;
+  > a {
+    position: relative;
+    ::before {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      right: 0;
+      background-color: ${(props) => props.theme.colors.black};
+      height: 1px;
+      pointer-events: none;
+    }
+  }
 `;
 
 const StyledImage = styled.img`

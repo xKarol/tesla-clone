@@ -16,7 +16,11 @@ function Heading({ heading, subheading }) {
         animate={{ opacity: 1, translateY: 0 }}
         transition={{ delay: 1.1, duration: 0.6 }}
       >
-        {subheading && <StyledSubheading>{subheading}</StyledSubheading>}
+        {subheading && (
+          <StyledSubheading
+            dangerouslySetInnerHTML={{ __html: subheading }}
+          ></StyledSubheading>
+        )}
       </motion.div>
     </StyledHeadingBox>
   );

@@ -4,7 +4,9 @@ const defaultButtons = [
   ["Shop Now"],
 ];
 
-const defaultSubheadings = [["Order Online for Touchless Delivery"]];
+const defaultSubheadings = [
+  [`Order Online for <a href='/'>Touchless Delivery</a>`],
+];
 
 export const pages = [
   {
