@@ -25,7 +25,8 @@ export const StyledMainBox = styled.section`
   position: relative;
   scroll-snap-align: start;
   width: 100%;
-  min-height: 100%;
+  height: 100vh;
+  flex-shrink: 0;
 `;
 
 export const StyledHeadingBox = styled.div`

@@ -9,25 +9,42 @@ import { pages } from "./data";
 import ArrowDown from "./arrow-down";
 
 function Main() {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState({ index: 0 });
   const scrollRef = useRef(null);
-  const [ref, setRef] = useState(null);
   const [opacity, setOpacity] = useState(1);
-  const lastPage = active === pages.length - 1;
+  const { index: activeId, entry } = active;
+  const lastPage = activeId === pages.length - 1;
 
-  useEffect(() => setRef(scrollRef.current), [scrollRef]);
+  useEffect(() => {
+    const ref = scrollRef?.current;
+    if (!ref) return;
+
+    const handleScroll = () => {
+      const element = entry.target.parentElement.childNodes[activeId];
+      const viewportHeight = window.innerHeight * 0.2;
+      const scrollTop = ref.scrollTop;
+      const elementOffsetTop = element.offsetTop;
+      const elementHeight = element.offsetHeight * 0.2;
+      const distance = scrollTop + viewportHeight - elementOffsetTop;
+      let percentage = (distance / (viewportHeight + elementHeight)) * 2;
+      if (percentage > 1) percentage = 1 - (percentage - 1);
+      if (percentage < 0) percentage = 0;
+      setOpacity(percentage);
+    };
+
+    ref.addEventListener("scroll", handleScroll);
+    return () => ref.removeEventListener("scroll", handleScroll);
+  }, [scrollRef, entry, activeId, setOpacity]);
 
   return (
-    <MainContext.Provider
-      value={{ active, setActive, setOpacity, scrollRef: ref }}
-    >
+    <MainContext.Provider value={{ setActive }}>
       <StyledMainContent style={{ opacity: opacity }}>
         <Heading
-          heading={pages[active].heading}
-          subheading={pages[active].subheading}
+          heading={pages[activeId].heading}
+          subheading={pages[activeId].subheading}
         />
-        <Buttons buttonText={pages[active]?.buttons} />
-        <ArrowDown show={active === 0} />
+        <Buttons buttonText={pages[activeId]?.buttons} />
+        <ArrowDown show={activeId === 0} />
         {lastPage && <Footer />}
       </StyledMainContent>
       <StyledMain ref={scrollRef}>

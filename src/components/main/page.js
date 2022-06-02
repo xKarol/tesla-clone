@@ -11,34 +11,14 @@ function MainPage({ images, index }) {
     trackVisibility: true,
     delay: 100,
   });
-  const { setActive, active, scrollRef, setOpacity } = useContext(MainContext);
+  const { setActive } = useContext(MainContext);
   const { width } = useContext(AppContext);
 
   useEffect(() => {
     if (inView) {
-      setActive(index);
+      setActive({ index, entry });
     }
-  }, [inView, index, setActive]);
-
-  useEffect(() => {
-    if (!scrollRef) return;
-
-    const handleScroll = () => {
-      const element = entry.target.parentElement.childNodes[active];
-      const viewportHeight = window.innerHeight * 0.2;
-      const scrollTop = scrollRef.scrollTop;
-      const elementOffsetTop = element.offsetTop;
-      const elementHeight = element.offsetHeight * 0.2;
-      const distance = scrollTop + viewportHeight - elementOffsetTop;
-      let percentage = (distance / (viewportHeight + elementHeight)) * 2;
-      if (percentage > 1) percentage = 1 - (percentage - 1);
-      if (percentage < 0) percentage = 0;
-      setOpacity(percentage);
-    };
-
-    scrollRef.addEventListener("scroll", handleScroll);
-    return () => scrollRef.removeEventListener("scroll", handleScroll);
-  }, [scrollRef, entry, active, setOpacity]);
+  }, [inView, index, setActive, entry]);
 
   return (
     <StyledMainBox ref={ref}>
